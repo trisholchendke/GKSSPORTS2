@@ -1,0 +1,50 @@
+<div class="modal-header">
+	<h3 class="modal-title text-center">Cart Details</h3>
+</div>
+<div class="modal-body">
+<!--{{cart_record.cart_object}}-->
+	<div style="margin: 25px"class="">
+     <table ng-if="cart_record.cart_object[0].name" class="table table-bordered table-responsive">
+		<caption class="text-center">My Cart</caption>
+		<thead>
+			<tr>
+				<th>Cart Item Name</th>
+				<th>Rate</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="each_cart_item in cart_record.cart_object">
+				<td>{{each_cart_item.name}}</td>
+				<td>{{each_cart_item.rate}}</td>
+				<td>
+					<input type="number" min="1" ng-model="each_cart_item.quantity" class="form-control input-sm">
+				</td>
+				<td class="text-right">{{each_cart_item.price = each_cart_item.rate * each_cart_item.quantity |  currency:"&#8377;"}}</td>
+				<td class="text-right">
+					<button 
+						class="btn btn-danger glyphicon glyphicon-remove"
+						ng-click="remove_item(each_cart_item)"
+					>
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="text-right"><b>Total Price:</b></td>
+				<td class="text-right"><b>{{get_cart_total_price() |  currency:"&#8377;"}}</b></td>
+			</tr>
+		</tbody>
+	</table>
+	<div ng-if="!cart_record.cart_object[0].name" class="row well" style="background-color:lavender">
+		<h2 class="text-center">Your Cart is Empty</h2>
+	</div>
+</div>
+	
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
+

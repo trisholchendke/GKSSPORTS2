@@ -1,0 +1,195 @@
+<div ng-controller='controller_sponsor_upload_document'>
+	<meta charset="utf-8" />
+	<title>GKS-UPLOAD LOGO</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<link rel="icon" type="image/gif/png" href="/lib/assets/img/logo_logo.png">
+	<link href="../../../../fonts.googleapis.com/cssff98.css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="../lib/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/animate.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/style.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    <link href="../lib/assets/css/custom_style.css" rel="stylesheet"/>
+	<link href="../lib/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link href="../lib/assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+	<script src="../lib/assets/plugins/pace/pace.min.js"></script>
+	
+	<link href="../lib/assets/css/style.css" rel="stylesheet" />
+	<link href="../lib/assets/fileupload/css/fileinput.css" rel="stylesheet" />
+	
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<div ng-include="'panels/common_things/fixed_header/fixed_header.ng.html'"></div>
+		</div>
+		
+		<div ng-include="'panels/common_things/fixed_sponsor_sidebar/fixed_sponsor_sidebar.html'"></div>
+		<div id="content" class="content">
+					<ol class="breadcrumb pull-right">
+				<li><a href="/#/sponsor_dashboard">Home</a></li>
+				<li class="active">Upload Documents</li>
+			</ol>
+			<h1 class="page-header custom_color">Upload Documents <!-- <small>header small text goes here...</small> --></h1>
+        	<hr/>
+			<div class="panel panel-inverse" data-sortable-id="form-validation-2">
+           	<div class="panel-body panel-form">
+			    <form class="form-horizontal form-bordered" ng-controller="controller_sponsor_upload_document as up" name="up.upload_form" data-parsley-validate="true" novalidate="">
+					<div class="form-group">
+							<label class="control-label col-md-4 col-sm-4" for="document_title">Document Title* :</label>
+							<div class="col-md-6 col-sm-6">
+								<input 
+									class="form-control" 
+									type="text" 
+									id="document_title" 
+									name="document_title" 
+									data-type="alphanum" 
+									placeholder="Document Title" 
+									data-parsley-required="true" 
+									ng-model="up.document_title"
+									data-parsley-id="3526" 
+									autofocus
+									required
+								>
+								 <i  style="color:red" ng-show="up.upload_form.document_title.$dirty && up.upload_form.document_title.$error.required">*required</i><br>
+									<ul 
+										class="parsley-errors-list filled" 
+										id="parsley-id-3526"
+									>
+										<li class="parsley-required"></li>
+									</ul>
+							</div>
+				    </div>
+					<div class="form-group">
+						<label class="control-label col-md-4 col-sm-4" for="Tags">Upload Supported Document* :</label>
+						<div class="col-md-6 col-sm-6">
+							 <div class="form-group">
+								<input 
+									id="file-4" 
+									type="file" 
+									class="file" 
+									ngf-select="" 
+									ngf-drop=""
+									ng-model="up.file" 
+									name="file" 
+									ngf-pattern="'.pdf,.docx,image/*'"
+									accept=".pdf,.docx,image/*" 
+									ngf-max-size="20MB"
+									required
+								>
+<!-- 									data-upload-url="#" -->
+						        <i  style="color:red" ng-show="up.upload_form.file.$dirty && up.upload_form.file.$error.required">*required</i><br>
+						        <i  style="color:red" ng-show="up.upload_form.file.$dirty && up.upload_form.file.$error.maxSize">File too large 
+					        		{{up.file.size / 1000000|number:1}}MB: max 20M</i>
+					       		 <p>{{up.progress}}</p>
+							</div>
+						</div>
+					</div>	
+					<div class="form-group">
+						<label class="control-label col-md-4 col-sm-4"></label>
+						<div class="col-md-6 col-sm-6">
+							<a 
+							>
+								<button 
+									type="submit" 
+									class="btn btn-primary"
+									ng-click="up.submit(up)"
+									ng-disabled="up.upload_form.$invalid"
+								>Add
+								</button>
+							</a>
+								<a 
+									class="btn btn-danger" 
+									ng-click="reset_form()"
+								>Cancel
+								</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+		
+		<a 
+			href="javascript:;" 
+			class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" 
+			data-click="scroll-top"
+		>
+			<i class="fa fa-angle-up"></i>
+		</a>
+	</div>
+
+	<script src="../lib/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../lib/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="../lib/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../lib/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="../lib/assets/plugins/parsley/dist/parsley.js"></script>
+	<script src="../lib/assets/js/apps.min.js"></script>
+	<script src="../lib/assets/fileupload/js/fileinput.js"></script>
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+	
+	<script>
+    $('#file-fr').fileinput({
+        language: 'fr',
+        uploadUrl: '#',
+        allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+    });
+    $('#file-es').fileinput({
+        language: 'es',
+        uploadUrl: '#',
+        allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+    });
+    $("#file-0").fileinput({
+        allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+    });
+    $("#file-1").fileinput({
+        uploadUrl: '', // you must set a valid URL here else you will get an error
+        allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+        overwriteInitial: false,
+        maxFileSize: 1000,
+        maxFilesNum: 10,
+        //allowedFileTypes: ['image', 'video', 'flash'],
+        slugCallback: function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+	});
+	$("#file-3").fileinput({
+		showUpload: false,
+		showCaption: false,
+		browseClass: "btn btn-primary btn-lg",
+		fileType: "any",
+        previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+	});
+	$("#file-4").fileinput({
+		uploadExtraData: {kvId: '10'}
+	});
+    $(".btn-warning").on('click', function() {
+        if ($('#file-4').attr('disabled')) {
+            $('#file-4').fileinput('enable');
+        } else {
+            $('#file-4').fileinput('disable');
+        }
+    });    
+    $(".btn-info").on('click', function() {
+        $('#file-4').fileinput('refresh', {previewClass:'bg-info'});
+    });
+    $(document).ready(function() {
+        $("#test-upload").fileinput({
+            'showPreview' : false,
+            allowedFileExtensions : ['jpg', 'png','gif','mp4','wmv'],
+            'elErrorContainer': '#errorBlock'
+        });
+    });
+	</script>
+</div>

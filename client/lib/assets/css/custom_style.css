@@ -1,0 +1,391 @@
+
+.custom_color{
+	color:#00acac;
+}
+.margin_right{
+margin-right: 13px;
+}
+.sidebar .nav>li.nav-header{
+  margin-left: 27px;
+}
+.clearfix{
+	clear:left;
+}
+.theme_color
+{
+	color:#00acac;
+}
+#gallery1{
+	 padding-left: 28px;
+}   
+div.dataTables_wrapper div.dataTables_filter{
+	text-align: center;
+}
+.custom_button{
+	float: right;
+    position: relative;
+    top: 81px;
+    right: 116px;
+    z-index: 9;
+}
+
+.back_color{
+	background-color:#f44336 !important;
+	color:#f44336 !important;
+}
+
+a.active1 {
+	background-color:#00acac;
+
+}
+.sidebar .nav>li>a {
+color:#fff !important;
+}
+a.signin_btn_link:hover{
+	text-decoration:none;
+}
+.publisher_add_button{
+    float: right;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+.table_header{
+	text-align: center;
+    font-weight: 900;
+    font-size: 19px !important;
+}
+.responsive{
+	 max-width: 100% !important;
+    /* height: auto !important; */
+	
+}	
+
+.custom_icon	
+{
+	color:#00acac;
+	margin-left: 19%;
+}
+.inline{
+	display:inline;
+}	
+.gallery .image-info .title{
+	overflow: initial;
+    text-overflow: initial;
+}	
+.bootstrap-tags .tags-input{
+	display:block !important;
+	width:100% !important;
+	padding-left:initial !important;
+}	
+/* css for angular datatable*/
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, .dataTables_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before{
+	background: #00acac !important; 
+    border-radius: 0px !important;
+    border: none !important;
+    top: 8px !important;
+    left: 3px !important;
+    line-height: 15px !important;
+    box-shadow: 4px 2px 0px #888888 !important;
+}
+table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before{
+	top: 3px !important;
+    left: 11px !important;
+    height: 16px !important;
+    width: 16px !important;
+    display: block !important;
+    position: absolute !important;
+   
+    border: 2px solid white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 0 3px #444 !important;
+    box-sizing: content-box !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    text-indent: 0px !important;
+    line-height: 38px ;
+    content: '-' !important;
+    background-color: #00acac
+}
+/* css for angular datatable ends*/	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*media query for all sizes*/
+@media screen and (max-width:961px) and (min-width:860px){
+.margin_right {
+    margin-right: 10px;
+}
+}
+@media screen and (max-width:1038px) and (min-width:1001px){
+	.margin_right {
+    margin-right: 10px;
+}
+}
+@media screen and (max-width:1015px) and (min-width:1007px){
+	.margin_right {
+    margin-right: 9px;
+}
+}
+@media screen and (max-width:832px) and (min-width:809px){
+	.margin_right {
+    margin-right: 10px;
+}
+}
+@media screen and (max-width:976px) and (min-width:885px){
+	.margin_right {
+    margin-right: 10px;
+}
+}
+@media screen and (max-device-width:767px) (orientation:landscape){
+.publisher_add_button{
+	width: 34% !important;
+    margin-right: 28% !important;
+    margin-top: 0% !important;
+}
+div.dataTables_wrapper div.dataTables_length select{
+  margin-top: -1% !important;
+}
+}
+
+@media screen and (max-width:1024px) and (min-width:768px){
+.publisher_add_button{
+	margin-right:10px;
+}
+.margin_right {
+    margin-right: 9px;
+}
+}
+
+@media screen and (max-width:640px) and (min-width:360px) and (orientation:portrait){
+.publisher_add_button {
+    float: right !important;
+    margin-right: 16% !important;
+    margin-bottom: 2% !important;
+    width: 54% !important;
+}
+div.dataTables_wrapper div.dataTables_length select{ 
+width: 166px !important;
+}
+.dataTables_length, div.dataTables_info{
+	    float: none;
+    margin-left: 51px;
+
+}
+.margin_right {
+    margin-right: 9px;
+}
+}
+
+@media screen and (max-width:480px) and (min-width:320px){
+	div.dataTables_wrapper div.dataTables_length label{
+margin-left: 16%;}
+
+
+div.dataTables_wrapper div.dataTables_length select{
+width: 149px;
+}
+
+.publisher_add_button{
+width: 55%;
+margin-right: 14%;
+margin-bottom: 2%;
+}
+}
+@media screen and (min-device-width:360px) and (max-device-width:640px) and (orientation:portrait)
+{
+	.publisher_add_button
+	{
+	width: 54% !important;
+    margin-right: 15% !important;
+    margin-bottom: 2% !important;
+	}
+	div.dataTables_wrapper div.dataTables_length select{
+	width: 166px !important;
+	}
+	div.dataTables_wrapper div.dataTables_length label{
+		margin-left: 1% !important;
+	}
+}
+@media only screen and (max-device-width : 320px) and (min-device-width : 480px) {
+.publisher_add_button {
+    float: right;
+    margin-right: 27%;
+    margin-bottom: 1%;
+    width: 35%;
+}
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*media query for galaxy note 3 for both portrait and landscape*/
+
+/* @media screen and (max-width:640px) and (min-width:360px)
+{
+	.publisher_add_button 
+	{
+    float: right !important;
+    margin-right: 31% !important;
+    margin-bottom: 7% !important;
+    width: 28% !important;
+    }
+} */
+/*--------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (max-device-width : 320px) and (min-device-width : 480px) {
+.publisher_add_button {
+    float: right;
+    margin-right: 27%;
+    margin-bottom: 1%;
+    width: 35%;
+}
+div.dataTables_wrapper div.dataTables_length select{
+    width: 151px !important;
+    margin-left: 1%;
+}
+.dataTables_length, div.dataTables_info {
+    float: none;
+    margin-left: 61px;
+}
+}
+/* media only screen and (max-width: 480px) and (orientation: landscape) {
+  .publisher_add_button {
+    float: right;
+    margin-right: 25%;
+    margin-bottom: 1%;
+    width: 39%;
+}
+div.dataTables_wrapper div.dataTables_length select{
+       width: 168px !important;
+    margin-left: 1%;
+}
+.dataTables_length, div.dataTables_info{
+	float: none;
+       margin-right: 49px;
+}
+}
+ */
+@media screen and (max-device-width: 640px) and (min-device-width: 360px) and (orientation:landscape) {
+
+	.publisher_add_button {
+		float: right !important;
+		margin-right:31% !important;
+		margin-bottom:7% !important;
+		width:28% !important;
+	}
+
+}
+
+@media screen and (max-width:640px) {
+	.publisher_add_button{
+		background-color:black !important;
+	}
+}
+
+@media only screen and (min-device-width:768px) and (max-device-width:1024px){
+	.gallery .image {
+  width:51% !important;
+    /* margin-left: 14% !important; */
+}
+}
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation:landscape) {
+	.gallery .image {
+   width: 39% !important;
+    margin-left: 50px !important;
+}
+.custom_icon {
+        margin-left: 16%;
+}
+.gallery .image-info{
+	    width: 100% !important;
+}
+/* .right_icon{
+	float: right;
+    margin-right:8%;
+} */
+.custom_video{
+	width:500px !important;
+	height:300px !important;
+}
+.custom_icon {
+    margin-left:48% !important;
+}
+}
+#tagVideo{
+	text-decoration:none;
+}
+.inline{
+	display:inline;
+}
+.bootstrap-tags.bootstrap-2 .tag.md{
+	background-color:#2d353c !important;
+}
+.tags{
+	margin-left: 4%;
+}
+.bootstrap-tags .tag.md{
+	font-size:12px !important;
+}
+.badge, .label{
+	font-weight:300 !important;
+}
+/* @media only screen and (min-device-width:320px) and (max-device-width:568px){
+	video{
+		width: 100%;
+    max-width: 273px !important;
+    height: auto;
+    margin-left: -7%;
+	}
+	.gallery .image{
+		    width: 100% !important;
+			float:none;
+	}
+	.custom_icon {
+    
+    margin-left: 5%;
+}
+.gallery .image-info .title{
+	
+}
+.image-info{
+	    margin-left: -8%;
+}
+}
+ */
+	
+@media only screen and (min-device-width:320px) and (max-device-width:568px){
+.gallery .image    {
+	float:none !important;
+	width:88% !important;
+}
+.responsive{
+ height: auto !important;
+-webkit-height:none !important;
+ max-width: none !important;
+}
+video{
+	width:245px !important;
+	height: 195px !important;
+}
+.custom_icon {
+   margin-left: 5%;
+}
+.image-info{
+	margin-left: -5%;
+}
+}
+
+
+
+    

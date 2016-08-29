@@ -1,0 +1,112 @@
+<div ng-controller='controller_sponsor_login'>
+  <title>Sponsor Login</title>
+  <link rel="stylesheet" href="../lib/assets/dist/style.css">
+  <div class="container">
+<!--     <form name="form"  role="form"> -->
+<!--         <div  -->
+<!--         	class="form-group"  -->
+<!--         	ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }" -->
+<!--         > -->
+<!--             <label for="username">Username</label> -->
+<!--             <input  -->
+<!--             	type="text"  -->
+<!--             	name="username"  -->
+<!--             	id="field1"  -->
+<!--             	class="form-control"  -->
+<!--             	ng-model="register_user1.user_name"  -->
+<!--             	required -->
+<!--             > -->
+<!--             <span  -->
+<!--             	ng-show="form.username.$dirty && form.username.$error.required"  -->
+<!--             	class="help-block" -->
+<!--             >Username is required -->
+<!--             </span> -->
+<!--         </div> -->
+<!--         <div  -->
+<!--         	class="form-group"  -->
+<!--         	ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }" -->
+<!--         > -->
+<!--             <label for="password">Password</label> -->
+<!--             <input  -->
+<!--             	type="password"  -->
+<!--             	name="password"  -->
+<!--             	id="field2"  -->
+<!--             	class="form-control"  -->
+<!--             	ng-model="register_user1.password"  -->
+<!--             	required -->
+<!--             > -->
+<!--             <span  -->
+<!--             	ng-show="form.password.$dirty && form.password.$error.required"  -->
+<!--             	class="help-block" -->
+<!--             >Password is required -->
+<!--             </span> -->
+<!--         </div> -->
+<!--         <div class="form-actions"> -->
+<!-- 	        <center> -->
+<!-- 		        	<button  -->
+<!-- 		            		type="submit"  -->
+<!-- 		            		ng-disabled="form.$invalid || vm.dataLoading"  -->
+<!-- 		            		class="btn btn-primary"  -->
+<!-- 							ng-click = "register_user(register_user1)" -->
+<!-- 							id="field3" -->
+<!-- 		            >Register -->
+<!-- 		            </button> -->
+<!-- 		            <button  -->
+<!-- 		            	ng-click="reset()" -->
+<!-- 		            	class="btn btn-primary glyphicon glyphicon-refresh" -->
+<!-- 		            > -->
+<!-- 		            </button> -->
+<!-- 	        </center> -->
+<!--      </div> -->
+<!-- 	</form> -->
+      <div class="row">
+	  <img src="../lib/assets/img/logo_logo.png" class="logo"/>
+          <div class="card card-container">
+            <h3	class="text-center h3_text_color">Sponsor Login</h3>
+              <img id="profile-img" class="profile-img-card" src="../lib/assets/images/admin.jpg" />
+              <p id="profile-name" class="profile-name-card"></p>
+              <div class="form-group" style="margin-top:-24%">
+                  <div class="input-group input-group-md" id="input_top_margin">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <div class="icon-addon addon-md">
+                          <input 
+                          	type="text" 
+                          	placeholder="Username" 
+                          	class="form-control" 
+                          	id="email"
+                          	ng-model="login_sponsor.user_name"
+                          >
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="input-group input-group-md">
+                      <span class="input-group-addon back"><i class="glyphicon glyphicon-lock"></i></span>
+                      <div class="icon-addon addon-md">
+                          <input 
+                          	type="password" 
+                          	placeholder="Password" 
+                          	class="form-control" 
+                          	id="email"
+                          	ng-model="login_sponsor.password"
+                          >
+                      </div>
+                  </div>
+              </div>
+              <a 
+              	class="signin_btn_link"
+              >
+              	<button 
+              		class="btn btn-lg btn-primary btn-block btn-signin" 
+              		type="submit" 
+              		style="font-size: 20px; 
+              		font-weight: 900;"
+              		ng-click="login_sponsors(login_sponsor)"
+              	>Sign in &nbsp; 
+              		<i class="glyphicon glyphicon-menu-right"></i>
+              	</button>
+             </a>
+          </div>
+      </div>
+    </div>
+</div>

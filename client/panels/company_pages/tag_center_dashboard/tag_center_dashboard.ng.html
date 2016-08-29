@@ -1,0 +1,158 @@
+<div ng-controller='controller_tag_center_dashboard'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>GKS-Sponsor Dashboard</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<link rel="icon" type="image/gif/png" href="lib/assets/img/logo_logo.png">
+	
+	<link href="../lib/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/animate.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/style.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="../lib/assets/css/bootstrap-tags.css" rel="stylesheet" />
+    <link href="../lib/assets/css/custom_style.css" rel="stylesheet"/>
+	
+	<link href="../lib/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+	<script src="../lib/assets/plugins/pace/pace.min.js"></script>
+</head>
+<body>
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+			<div ng-include="'panels/common_things/fixed_header/fixed_header.ng.html'"></div>
+			<div ng-include="'panels/common_things/fixed_tag_center_sidebar/fixed_tag_center_sidebar.ng.html'"></div>
+		<div id="content" class="content">
+<!-- 		<pre>{{video_data | json}}</pre> -->
+<!-- 		<form> -->
+<!-- 			<input  -->
+<!-- 				type="text"  -->
+<!-- 				class="form-control" -->
+<!-- 				ng-model="video.video_url" -->
+<!-- 				placeholder="Enter Video Url" -->
+<!-- 			> -->
+<!-- 			{{video_url}} -->
+			
+<!-- 			<input  -->
+<!-- 				type="text"  -->
+<!-- 				class="form-control" -->
+<!-- 				ng-model="video.video_name" -->
+<!-- 				placeholder="Enter Video Name" -->
+<!-- 			> -->
+<!-- 			{{video_name}} -->
+			
+<!-- 			<input  -->
+<!-- 				type="text"  -->
+<!-- 				class="form-control" -->
+<!-- 				ng-model="video.video_description" -->
+<!-- 				placeholder="Enter Video Description" -->
+<!-- 			> -->
+<!-- 			{{video_description}} -->
+<!-- 			<br> -->
+<!-- 			<div ng-repeat="itemToAdd in itemsToAdd"> -->
+<!-- 			    <input placeholder="Enter Tags" type="text" ng-model="itemToAdd.tags" /> -->
+<!-- 			    <button ng-click="add(itemToAdd)">Add</button> -->
+<!-- 		  </div> -->
+<!-- 		  <div> -->
+<!-- 		    <button ng-click="addNew()">Add new</button> -->
+<!-- 		  </div> -->
+<!-- 			<center> -->
+<!-- 				<button class="btn btn-primary btn-lg" ng-click="send_video_data()">Submit</button> -->
+<!-- 			</center> -->
+<!-- 		</form> -->
+<!-- 		<pre>{{video | json}}</pre> -->
+		
+		<div ng-repeat="item in items">
+    		{{item.tags}}
+  		</div>
+		  
+<!-- 		<pre>{{video | json}}</pre> -->
+			<ol class="breadcrumb pull-right">
+				<li><a href="dashboard.html">Home</a></li>
+				<li class="active">Dashboard</li>
+			</ol>
+			<h1 class="page-header custom_color">Dashboard</h1>
+			
+			<hr/>
+			<div class="panel panel-inverse clearfix" data-sortable-id="table-basic-5">
+				<div class="panel-heading">
+	                 <div class="panel-heading-btn">
+	                     <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+	                    
+	                 </div>
+	                 <h4 class="panel-title">Uploaded Videos</h4>
+	            </div>
+				<div class="row">
+					<div id="gallery1" class="gallery">
+		                <div ng-repeat="each_video in video_data" class="image gallery-group-1 pull-left video_size">
+			                    <div class="image-inner">
+			                        
+									 <video width="300" height="195" class="responsive" controls>							
+										<source src="{{each_video.video_url}}" type="video/mp4">
+									 </video>                      	
+			                    </div>
+								<div class="readOnly tags bootstrap-tags bootstrap-2">
+								<div class="tags">
+									<div ng-repeat="each_video1 in each_video.tags | orderBy:'video_name' | limitTo:-5" class="tag label btn-info md">  
+										<span>&nbsp;&nbsp;{{each_video1.tags}}&nbsp;&nbsp;</span>      
+									</div>
+									
+								</div>
+								<br>
+								</div>
+								<br/>
+								<br/>
+			                    <div class="image-info">
+			                        <h5 class="title">{{each_video.video_name}}</h5>
+			                        <div class="pull-right"> 
+			                        </div>                        
+			                        <div class="desc">
+			                            {{each_video.video_description}}
+			                        </div>
+									<a ui-sref="tag_center_tagvideo_form({ video_object: each_video})" id="tagVideo"><button type="button"  class="btn btn-primary btn-sm btn-block">Tag video</button></a>
+			                    </div>
+							</div>
+		            </div>
+	            </div>
+			</div>
+			<hr class="clearfix"/>
+		</div>
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+	</div>
+	
+	<script src="../lib/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../lib/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="../lib/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="../lib/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	
+	<script src="../lib/assets/plugins/flot/jquery.flot.min.js"></script>
+	<script src="../lib/assets/plugins/flot/jquery.flot.time.min.js"></script>
+	<script src="../lib/assets/plugins/flot/jquery.flot.resize.min.js"></script>
+	<script src="../lib/assets/plugins/flot/jquery.flot.pie.min.js"></script>
+	<script src="../lib/assets/plugins/sparkline/jquery.sparkline.js"></script>
+	<script src="../lib/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="../lib/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="../lib/assets/js/dashboard.min.js"></script>
+	
+	<script src="../lib/assets/js/apps.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			App.init();
+			Dashboard.init();
+		});
+	</script>
+</body>
+</html>
+
+</div>

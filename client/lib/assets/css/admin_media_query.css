@@ -1,0 +1,12 @@
+
+/*media query for making video responsive on each device*/
+@media screen only and (min-width:900px) and (max-width:1440px){
+	.gallery .image{
+    width: 33% !important;
+	background-color:red;
+	}
+	#gallery1{
+		padding-left: 74px;
+	}
+}
+/*media query for making video responsive on each device*/

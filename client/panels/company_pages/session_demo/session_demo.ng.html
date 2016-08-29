@@ -1,0 +1,29 @@
+<div ng-controller='controller_session_demo'>
+	<div id="name-display">
+	      <p>Hello, <span id="name"></span></p>
+	      
+	      <input 
+	      	type="button" 
+	      	name="logout" 
+	      	id="logout" 
+	      	value="Forget me"
+	      />
+    </div>
+    
+    <div id="name-form">
+      <p>What is your name?</p>
+      <input 
+      	type="text" 
+      	name="user-name" 
+      	id="user-name" 
+      />
+      
+      <input 
+      	type="button" 
+      	name="post-name" 
+      	id="post-name" 
+      	value="Enter" 
+      	ng-click="postName()" 
+      />
+    </div>
+</div>

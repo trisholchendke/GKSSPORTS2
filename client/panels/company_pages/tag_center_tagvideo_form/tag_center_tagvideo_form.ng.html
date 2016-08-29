@@ -1,0 +1,131 @@
+<div ng-controller='controller_tag_center_tagvideo_form'>
+	<title>GKS-UPLOAD VIDEO</title>
+	
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<link rel="icon" type="image/gif/png" href="../lib/assets/img/logo_logo.png">
+	<link href="../lib/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/animate.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/style.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="../lib/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="../lib/assets/css/bootstrap-tags.css" rel="stylesheet" />
+    <link href="../lib/assets/css/custom_style.css" rel="stylesheet"/>
+	<link href="../lib/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="../lib/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+	<link href="../lib/assets/fileupload/css/fileinput.css" rel="stylesheet" />
+	
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+		<div ng-include="'panels/common_things/fixed_header/fixed_header.ng.html'"></div>
+		<div ng-include="'panels/common_things/fixed_tag_center_sidebar/fixed_tag_center_sidebar.ng.html'"></div>
+		
+		<div id="content" class="content">
+			<ol class="breadcrumb pull-right">
+				<li><a href="dashboard.html">Home</a></li>
+				<li class="active">Tag A Video</li>
+			</ol>
+			<h1 class="page-header custom_color">Tag Video Details
+			<hr/>
+			<div class="panel panel-inverse" data-sortable-id="form-validation-2">
+				<div class="panel-body panel-form">
+					<form name="tag_center_tagvideo_form" class="form-horizontal form-bordered" data-parsley-validate="true" novalidate>
+						<div class="form-group">
+							<label class="control-label col-md-4 col-sm-4" for="VIdeoTitle">Title*:</label>
+							<div class="col-md-6 col-sm-6">
+							<input class="form-control " ng-model="video_name" type="text" id="VIdeoTitle" name="VIdeoTitle" data-type="alphanum" placeholder="Top 10 News" data-parsley-required="true" data-parsley-id="3526" readonly><ul class="parsley-errors-list filled" id="parsley-id-3526"><li class="parsley-required"></li></ul>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-4 col-sm-4" for="Description">Description:</label>
+							<div class="col-md-6 col-sm-6">
+							<textarea class="form-control" ng-model="video_description" id="Description" placeholder="This is the top 10 news from ZEE News" rows="5" readonly></textarea>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-4 col-sm-4" for="Tags">Tag* :</label>
+							<div class="col-md-6 col-sm-6" id="medium">
+								<div ng-repeat="item in items">
+						    		<button class="btn btn-info btn-sm" style="float: left;margin-right: 2px;margin-top: 5px">{{item.tags}}</button>
+						  		</div>
+							  	<br>
+							  	<br>
+								<div ng-repeat="itemToAdd in itemsToAdd">
+									<input 
+										style="float:left;" 
+										name="" 
+										placeholder="Enter Tags" 
+										class="form-control" 
+										type="text" 
+										ng-model="itemToAdd.tags" 
+										required 
+									/>
+									<div role="alert">
+										 <span 
+										 	class="error" 
+										 	ng-show="tag_center_tagvideo_form.itemToAdd.tags.$error.required"
+										 >
+				     						Tag Name is required.
+				    					</span>
+				  						</div>
+									<br><br>
+									<button ng-disabled="tag_center_tagvideo_form.$invalid" style="float:left;margin-right:4px" class="btn btn-warning btn-sm" ng-click="add(itemToAdd)">Add</button>
+								</div>
+								
+								<div>
+									<button ng-disabled="tag_center_tagvideo_form.$invalid" style="float:left;" class="btn btn-success btn-sm"  ng-click="addNew()">Add New Tag</button>
+								</div>
+								<br>
+								<br>
+								<div style="text-align:justify;" ng-repeat="each_tags in video_tags">
+									<button class="btn btn-primary btn-sm" style="float: left;margin-right: 2px;margin-top: 5px">{{each_tags.tags}}</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-md-4 col-sm-4"></label>
+							<div class="col-md-6 col-sm-6">
+								<button type="submit" ng-disabled="tag_center_tagvideo_form.$invalid" ui-sref="tag_center_dashboard" ng-click="push_anoter_tags()" class="btn btn-primary">Add</button>
+								<a class="btn btn-danger">Cancel</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<a 
+			href="javascript:;" 
+			class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" 
+			data-click="scroll-top"
+		>
+			<i class="fa fa-angle-up"></i>
+		</a>
+	</div>
+	
+	<script src="../lib/assets/plugins/pace/pace.min.js"></script>
+	<script src="../lib/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../lib/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="../lib/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../lib/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../lib/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<script src="../lib/assets/js/bootstrap-tags.min.js"></script>
+	<script src="../lib/assets/plugins/parsley/dist/parsley.js"></script>
+	<script src="../lib/assets/js/apps.min.js"></script>
+	
+	<script src="../lib/assets/fileupload/js/fileinput.js"></script>
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
+</div>
